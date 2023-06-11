@@ -130,13 +130,13 @@ namespace IA_Generated.Models
                     int newX = robot.X + dx;
                     int newY = robot.Y + dy;
 
-                    /*if (IsValidPosition(newX, newY) && cells[newX, newY] is Jewel )
+                    if (IsValidPosition(newX, newY) && cells[newX, newY] is Jewel )
                     {
                         Jewel jewel = (Jewel)cells[newX, newY];
                         robot.CollectJewel();
                         cells[newX, newY] = new Empty(newX, newY);
                         Console.WriteLine("Jewel collected: " + jewel.Type);
-                    }*/
+                    }
                 }
             }
         }
