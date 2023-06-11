@@ -1,7 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using IA_Generated.Interface;
 
 namespace IA_Generated.Models
@@ -20,7 +16,7 @@ namespace IA_Generated.Models
             Width = width;
             Height = height;
             cells = new ICell[Width, Height];
-            robot = new Robot(0, 0, 10, 3);
+            robot = new Robot(0, 0, 10, 0);
             InitializeMap();
         }
 
@@ -35,14 +31,27 @@ namespace IA_Generated.Models
                 }
             }
 
-            // Adiciona joias
-            AddJewel(new Jewel(2, 1, "Red"));
-            AddJewel(new Jewel(3, 3, "Green"));
-            AddJewel(new Jewel(4, 4, "Blue"));
+             // Insere as joias
+            AddJewel(new Jewel(1, 9, "Red"));
+            AddJewel(new Jewel(8, 8, "Red"));
+            AddJewel(new Jewel(9, 1, "Green"));
+            AddJewel(new Jewel(7, 6, "Green"));
+            AddJewel(new Jewel(3, 4, "Blue"));
+            AddJewel(new Jewel(2, 1, "Blue"));
 
-            // Adiciona obstáculos
-            AddObstacle(new Obstacle(1, 0, "Water"));
-            AddObstacle(new Obstacle(3, 2, "Tree"));
+            // Insere os obstáculos
+            AddObstacle(new Obstacle(5, 0, "Water"));
+            AddObstacle(new Obstacle(5, 1, "Water"));
+            AddObstacle(new Obstacle(5, 2, "Water"));
+            AddObstacle(new Obstacle(5, 3, "Water"));
+            AddObstacle(new Obstacle(5, 4, "Water"));
+            AddObstacle(new Obstacle(5, 5, "Water"));
+            AddObstacle(new Obstacle(5, 6, "Water"));
+            AddObstacle(new Obstacle(5, 9, "Tree"));
+            AddObstacle(new Obstacle(3, 9, "Tree"));
+            AddObstacle(new Obstacle(8, 3, "Tree"));
+            AddObstacle(new Obstacle(2, 5, "Tree"));
+            AddObstacle(new Obstacle(1, 4, "Tree"));
 
             // Posiciona o robô
             PlaceRobot(robot.X, robot.Y);
@@ -51,6 +60,7 @@ namespace IA_Generated.Models
         public void AddJewel(Jewel jewel)
         {
             cells[jewel.X, jewel.Y] = jewel;
+            robot.BagSize++;
         }
 
         public void AddObstacle(Obstacle obstacle)
@@ -120,34 +130,34 @@ namespace IA_Generated.Models
                     int newX = robot.X + dx;
                     int newY = robot.Y + dy;
 
-                    if (IsValidPosition(newX, newY) && cells[newX, newY] is Jewel)
+                    /*if (IsValidPosition(newX, newY) && cells[newX, newY] is Jewel )
                     {
                         Jewel jewel = (Jewel)cells[newX, newY];
                         robot.CollectJewel();
                         cells[newX, newY] = new Empty(newX, newY);
                         Console.WriteLine("Jewel collected: " + jewel.Type);
-                    }
+                    }*/
                 }
             }
         }
 
-        public void MoveRobot(string direction)
+        public void MoveRobot(char direction)
         {
             int newX = robot.X;
             int newY = robot.Y;
 
             switch (direction)
             {
-                case "up":
+                case 'w':
                     newY--;
                     break;
-                case "down":
+                case 's':
                     newY++;
                     break;
-                case "left":
+                case 'a':
                     newX--;
                     break;
-                case "right":
+                case 'd':
                     newX++;
                     break;
             }
@@ -160,13 +170,14 @@ namespace IA_Generated.Models
                     robot.Move(newX, newY);
                     cells[robot.X, robot.Y] = robot;
                 }
-                else if (cells[newX, newY] is Jewel)
+                /*else if (cells[newX, newY] is Jewel)
                 {
                     CollectJewel();
                     cells[robot.X, robot.Y] = new Empty(robot.X, robot.Y);
                     robot.Move(newX, newY);
                     cells[robot.X, robot.Y] = robot;
                 }
+                */
                 else if (cells[newX, newY] is Obstacle)
                 {
                     Console.WriteLine("Obstacle encountered!");

@@ -1,7 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using IA_Generated.Interface;
 
 namespace IA_Generated.Models
@@ -50,6 +46,7 @@ namespace IA_Generated.Models
         public void CollectJewel()
         {
             BagCount++;
+            Energy++;
         }
 
         public bool IsBagFull()
