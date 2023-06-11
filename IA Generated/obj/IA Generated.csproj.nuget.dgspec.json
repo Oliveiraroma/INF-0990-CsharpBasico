@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Programacao\\Tecnologias Microsoft\\INF-0990 - Programação em C#\\Projeto Final\\IA Generated\\IA Generated.csproj": {}
+    "c:\\Programacao\\Tecnologias Microsoft\\INF-0990 - Programação em C#\\Projeto Final\\IA Generated\\IA Generated.csproj": {}
   },
   "projects": {
-    "C:\\Programacao\\Tecnologias Microsoft\\INF-0990 - Programação em C#\\Projeto Final\\IA Generated\\IA Generated.csproj": {
+    "c:\\Programacao\\Tecnologias Microsoft\\INF-0990 - Programação em C#\\Projeto Final\\IA Generated\\IA Generated.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Programacao\\Tecnologias Microsoft\\INF-0990 - Programação em C#\\Projeto Final\\IA Generated\\IA Generated.csproj",
+        "projectUniqueName": "c:\\Programacao\\Tecnologias Microsoft\\INF-0990 - Programação em C#\\Projeto Final\\IA Generated\\IA Generated.csproj",
         "projectName": "IA Generated",
-        "projectPath": "C:\\Programacao\\Tecnologias Microsoft\\INF-0990 - Programação em C#\\Projeto Final\\IA Generated\\IA Generated.csproj",
+        "projectPath": "c:\\Programacao\\Tecnologias Microsoft\\INF-0990 - Programação em C#\\Projeto Final\\IA Generated\\IA Generated.csproj",
         "packagesPath": "C:\\Users\\Lenovo T430\\.nuget\\packages\\",
-        "outputPath": "C:\\Programacao\\Tecnologias Microsoft\\INF-0990 - Programação em C#\\Projeto Final\\IA Generated\\obj\\",
+        "outputPath": "c:\\Programacao\\Tecnologias Microsoft\\INF-0990 - Programação em C#\\Projeto Final\\IA Generated\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Lenovo T430\\AppData\\Roaming\\NuGet\\NuGet.Config",
